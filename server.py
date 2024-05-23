@@ -14,7 +14,7 @@ def accept_connect(socket):
     sel.register(conect, events, data=data) # Регистрирует сокет в селекторе для отслеживания указанных событий и связывает с ним объект data.
 
 def service_connection(key, mask):
-    sock = key.fileobj #Получает объект сокета из ключа.
+    sock = key.fileobj #Получает объект сокета
     data = key.data #Получает объект data, связанный с сокетом.
     if mask & selectors.EVENT_READ:
         recv_data = sock.recv(1024)
